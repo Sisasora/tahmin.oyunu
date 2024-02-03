@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahmin Oyunu</title>
+</head>
+<body>
+    <h1>Tahmin Oyunu</h1>
+    <p>Soru: Enes ne sayesinde yaşar?</p>
+    <form id="cevapForm">
+        <label for="cevap">Cevabınızı girin:</label>
+        <input type="text" id="cevap" name="cevap">
+        <button id="cevaplaButton">Cevapla</button>
+    </form>
+
+    <div id="tebrikMesaji" style="display: none;">Tebrikler! Enes Momiçesi sayesinde yaşar.</div>
+
+    <script>
+        document.getElementById("cevapForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var cevap = document.getElementById("cevap").value.toLowerCase();
+            if (cevap === "beros" || cevap === "beroş") {
+                document.getElementById("tebrikMesaji").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
